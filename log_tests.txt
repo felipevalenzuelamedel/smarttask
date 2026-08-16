@@ -1,0 +1,15 @@
+Pruebas unitarias — SMARTTASK
+
+Métodos ejecutados:
+testAgregarTarea()
+testListarTareas()
+testMarcarComoCompletada()
+
+Resultado:
+testAgregarTarea() -> SUCCESS
+testListarTareas() -> SUCCESS
+testMarcarComoCompletada() -> SUCCESS
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+Resultado general: BUILD SUCCESS
