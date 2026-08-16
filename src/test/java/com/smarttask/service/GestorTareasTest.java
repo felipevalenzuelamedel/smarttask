@@ -1,15 +1,15 @@
 package com.smarttask.service;
 
-import com.smarttask.model.TareaNormal;
-import com.smarttask.model.TareaUrgente;
-import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import com.smarttask.model.TareaNormal;
+import com.smarttask.model.TareaUrgente;
 
 public class GestorTareasTest {
 
@@ -69,6 +69,28 @@ public class GestorTareasTest {
         assertFalse(resultado.contains("No hay tareas activas."));
         assertFalse(resultado.contains("No hay tareas completadas."));
     }
+
+    @Test
+void testListarTareasSinTareas() {
+    GestorTareas gestor = new GestorTareas();
+
+    ByteArrayOutputStream salida = new ByteArrayOutputStream();
+    PrintStream salidaOriginal = System.out;
+
+    try {
+        System.setOut(new PrintStream(salida));
+        gestor.listarTareas();
+    } finally {
+        System.setOut(salidaOriginal);
+    }
+
+    String resultado = salida.toString();
+
+    assertTrue(resultado.contains("TAREAS ACTIVAS"));
+    assertTrue(resultado.contains("No hay tareas activas."));
+    assertTrue(resultado.contains("TAREAS COMPLETADAS"));
+    assertTrue(resultado.contains("No hay tareas completadas."));
+}
 
     @Test
     void testMarcarComoCompletada() {
