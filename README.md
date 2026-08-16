@@ -18,10 +18,10 @@ El proyecto utiliza Maven para la gestión y compilación, JUnit 5 para las prue
 
 ## Tecnologías utilizadas
 
-- Java 17
-- Maven
+- Java 17 (versión objetivo de compilación)
+- Maven 3.9.16
 - JUnit 5.10.2
-- JaCoCo 0.8.12
+- JaCoCo 0.8.14
 
 ---
 
@@ -59,3 +59,4 @@ SMARTTASK/
 ## Enlace al repositorio
 
 https://github.com/felipevalenzuelamedel/smarttask
+
